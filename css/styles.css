@@ -45,6 +45,7 @@ ul {
     color: #353535;
     background-color: #BDC3C7;
     padding: 2% 8%;
+    pointer-events: none;
 }
 
 .menu_button:hover {
