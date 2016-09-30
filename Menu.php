@@ -1,6 +1,6 @@
 <?php
 
-class menu
+class Menu
 {
     private static $items = array (
         1 => array("name" => "Start", "href" => "index.php?page=1"),
@@ -10,7 +10,7 @@ class menu
 
     public static function renderMenu($selectedItem)
     {
-        $header = '<div class="header"><div class="title"><h1><a href="main.html">Pokemon Go</a></h1></div>';
+        $header = '<div class="header"><div class="title"><h1><a href="index.php">Pokemon Go</a></h1></div>';
         $menu = '<div class="menu"><ul>';
 
         foreach(self::$items as $key => $value)
