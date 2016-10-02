@@ -10,7 +10,7 @@ class Content
 
     public static function getContent($selectedPage)
     {
-        if ($selectedPage >= 1 && $selectedPage <= 3)
+        if (array_key_exists($selectedPage, self::$pages))
             return file_get_contents(self::$pages[$selectedPage]);
         else
             return file_get_contents('./assets/index.html');
