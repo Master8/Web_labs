@@ -1,6 +1,6 @@
 <?php
 
-class Menu
+class Header
 {
     private static $items = array (
         1 => array("name" => "Start", "href" => "index.php?page=1"),
@@ -8,9 +8,20 @@ class Menu
         3 => array("name" => "Top list", "href" => "index.php?page=3")
     );
 
+    public static function renderHeader($selectedItem)
+    {
+        $header = '<div class="header">'.self::renderLogo().self::renderMenu($selectedItem).'</div>';
+
+        return $header;
+    }
+
+    public static function renderLogo()
+    {
+        return '<div class="title"><h1><a href="index.php">Pokemon Go</a></h1></div>';
+    }
+
     public static function renderMenu($selectedItem)
     {
-        $header = '<div class="header"><div class="title"><h1><a href="index.php">Pokemon Go</a></h1></div>';
         $menu = '<div class="menu"><ul>';
 
         foreach(self::$items as $key => $value)
@@ -22,8 +33,7 @@ class Menu
         }
 
         $menu = $menu.'</ul></div>';
-        $header = $header.$menu.'</div>';
 
-        return $header;
+        return $menu;
     }
 }

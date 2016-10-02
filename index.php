@@ -7,9 +7,9 @@
     </head>
     <body>
         <?php
-            require('Menu.php');
+            require('Header.php');
             require('Content.php');
-            echo Menu::renderMenu($_GET['page']);
+            echo Header::renderHeader($_GET['page']);
             echo Content::getContent($_GET['page']);
         ?>
     </body>
