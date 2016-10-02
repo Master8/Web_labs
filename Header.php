@@ -3,9 +3,9 @@
 class Header
 {
     private static $items = array (
-        1 => array("name" => "Start", "href" => "index.php?page=1"),
-        2 => array("name" => "About", "href" => "index.php?page=2"),
-        3 => array("name" => "Top list", "href" => "index.php?page=3")
+        1 => "Start",
+        2 => "About",
+        3 => "Top list"
     );
 
     public static function renderHeader($selectedItem)
@@ -27,9 +27,9 @@ class Header
         foreach(self::$items as $key => $value)
         {
             if ($key == $selectedItem)
-                $menu = $menu.'<li><a class="menu_selected-button"'."href=$value[href]>$value[name]</a></li>";
+                $menu = $menu.'<li><a class="menu_selected-button"'."href=index.php?page=$key>$value</a></li>";
             else
-                $menu = $menu.'<li><a class="menu_button"'."href=$value[href]>$value[name]</a></li>";
+                $menu = $menu.'<li><a class="menu_button"'."href=index.php?page=$key>$value</a></li>";
         }
 
         $menu = $menu.'</ul></div>';
